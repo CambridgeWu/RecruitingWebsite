@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>猎人招聘网</title>
+    <link th:href="@{/visitor/visitor.css}" type="text/css" rel="stylesheet">
+</head>
+<script th:src="@{/webjars/jquery/3.5.1/jquery.js}"></script>
+<script type="text/javascript">
+    function detail(num) {
+        window.location.href="/applyer/toDetail?num="+num;
+    }
+</script>
+<body>
+    <!--顶部边栏-->
+    <div id="header">
+        <div class="header">
+            <div class="header_left">
+                <img th:src="@{/img/brand.png}">
+            </div>
+            <div class="header_right">
+                <a th:href="@{/personal}">个人中心</a>
+                <a th:href="@{/loginOut}">退出</a>
+            </div>
+        </div>
+    </div>
+    <!--投放广告-->
+    <div id="banner">
+        <img th:src="@{/img/header.png}">
+        <img th:src="@{/img/hright.png}">
+    </div>
+<!--    筛选框-->
+    <div class="background-color">
+        <div class="select">
+            <form th:action="@{/applyer/search}" method="post">
+                <table class="visitor">
+                    <thead>
+                    <th>地区</th>
+                    <th>学历要求</th>
+                    <th>薪资</th>
+                    <th>公司规模</th>
+                    <th>职位类型</th>
+                    <th></th>
+                    </thead>
+                    <thead>
+                    <th>
+                        <select name="region">
+                            <option>全部</option>
+                            <option>北京</option>
+                            <option>上海</option>
+                            <option>广州</option>
+                            <option>深圳</option>
+                            <option>杭州</option>
+                            <option>天津</option>
+                            <option>武汉</option>
+                            <option>浙江</option>
+                            <option>厦门</option>
+                        </select>
+                    </th>
+                    <th>
+                        <select name="education">
+                            <option>全部</option>
+                            <option>初中及以下</option>
+                            <option>中专</option>
+                            <option>高中</option>
+                            <option>大专</option>
+                            <option>本科</option>
+                            <option>硕士</option>
+                            <option>博士</option>
+                        </select>
+                    </th>
+                    <th>
+                        <select name="salary">
+                            <option>全部</option>
+                            <option>3K以下</option>
+                            <option>3-5K</option>
+                            <option>5-10K</option>
+                            <option>10-15K</option>
+                            <option>15-20K</option>
+                            <option>20-25K</option>
+                            <option>25K以上</option>
+                        </select>
+                    </th>
+                    <th>
+                        <select name="scaleCompany">
+                            <option>全部</option>
+                            <option>0~20人</option>
+                            <option>0~50人</option>
+                            <option>0~100人</option>
+                            <option>0~150人</option>
+                            <option>0~500人</option>
+                            <option>0~1000人</option>
+                            <option>1000人以上</option>
+                        </select>
+                    </th>
+                    <th>
+                        <select name="positionType">
+                            <option>全部</option>
+                            <option>高级管理</option>
+                            <option>技术</option>
+                            <option>产品</option>
+                            <option>设计</option>
+                            <option>运营</option>
+                            <option>财务</option>
+                            <option>市场</option>
+                        </select>
+                    </th>
+                    <th><input type="submit" class="btn"></th>
+                    </thead>
+                </table>
+            </form>
+        </div>
+
+        <div class="headLine">
+            <p>——————热门职位——————</p>
+        </div>
+<!--        展示框-->
+        <div class="show">
+            <table class="visitor">
+                <thead>
+                <th>面试官</th>
+                <th>职位类型</th>
+                <th>职位</th>
+                <th>学历要求</th>
+                <th>薪资</th>
+                <th>操作</th>
+                </thead>
+                <tbody>
+                <tr th:each="recruit:${page.list}">
+                    <td th:text="${recruit.interviewer}"></td>
+                    <td th:text="${recruit.positionType}"></td>
+                    <td th:text="${recruit.position}"></td>
+                    <td th:text="${recruit.education}"></td>
+                    <td th:text="${recruit.salary}"></td>
+                    <td><button class="btn" th:onclick="detail([[${recruit.num}]]);">查看详情</button></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="page">
+            <div class="pageLeft">
+                <p>当前第 [[${page.pageNum}]] 页  ||  总计 [[${page.pages}]] 页  || 共[[${page.total}]] 条记录</p>
+            </div>
+            <div class="pageRight">
+                <span>
+                    <a th:href="@{/applyer/yidong(pageNum=${page.pageNum}-1)}" th:unless="${page.isFirstPage}"><—上一页</a>
+                </span>
+                <span>
+                    <a th:href="@{/applyer/yidong(pageNum=${page.pageNum}+1)}" th:unless="${page.isLastPage}">下一页—></a>
+                </span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
