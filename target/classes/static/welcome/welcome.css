@@ -1,0 +1,268 @@
+body,img,li{
+    padding: 0px;
+    margin: 0px;
+}
+/*顶部边界*/
+#header{
+    width: 100%;
+    height: 50px;
+    background: #202329;
+    border: black 1px solid;
+}
+.header{
+    width: 70%;
+    height: 50px;
+    margin: 0px auto;
+}
+.header_left{
+    width: 500px;
+    height: 50px;
+    float: left;
+}
+.header_left>img{
+    width: 55px;
+    height: 45px;
+    margin-left: 10px;
+    margin-top: 2px;
+}
+.other{
+    width: 400px;
+    height: 45px;
+    float: right;
+}
+.other>a{
+    font-size: 25px;
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+}
+.header_right{
+    width: 400px;
+    height: 50px;
+    float: right;
+}
+.header_right>a{
+    float: right;
+    font-size: 20px;
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+}
+.header_right>a:hover,.other>a:hover{
+    background: #5dd5c8;
+}
+/*广告*/
+#banner{
+    width: 100%;
+    height: 120px;
+    margin: 0px auto;
+    background: #5dd5c8;
+}
+#banner>img:nth-child(1){
+    margin-left: 240px;
+    width: 354px;
+    height: 120px;
+}
+#banner>img:nth-child(2){
+    margin-right: 240px;
+    margin-top: 10px;
+    float: right;
+    height: 26px;
+}
+/*筛选框*/
+#select{
+    width: 60%;
+    height: 250px;
+    margin: 10px auto;
+}
+.area{
+    width: 100%;
+    height: 40px;
+    border: black 1px solid;
+}
+.area>span{
+    float: left;
+}
+.post{
+    width: 100%;
+    height: 40px;
+    border: black 1px solid;
+}
+.company{
+    width: 100%;
+    height: 40px;
+    border: black 1px solid;
+}
+.educationn{
+    width: 100%;
+    height: 40px;
+    border: black 1px solid;
+}
+.salary{
+    width: 100%;
+    height: 40px;
+    border: black 1px solid;
+}
+.area>span,.post>span,.company>span,.educationn>span,.salary>span{
+    height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 40px;
+}
+.area>a{
+    font-size: 18px;
+    text-decoration: none;
+    margin-left: 20px;
+}
+.area>a:hover{
+    color: red;
+}
+.post>a{
+    font-size: 18px;
+    text-decoration: none;
+    margin-left: 20px;
+}
+.post>a:hover{
+    color: red;
+}
+.company>a{
+    font-size: 18px;
+    text-decoration: none;
+    margin-left: 20px;
+}
+.company>a:hover{
+    color: red;
+}
+.educationn>a{
+    font-size: 18px;
+    text-decoration: none;
+    margin-left: 20px;
+}
+.educationn>a:hover{
+    color: red;
+}
+.salary>a{
+    font-size: 18px;
+    text-decoration: none;
+    margin-left: 20px;
+}
+.salary>a:hover{
+    color: red;
+}
+/*搜索框*/
+#search{
+    width: 600px;
+    height: 50px;
+    margin: 10px auto;
+}
+#search>input:first-of-type{
+    width: 380px;
+    height: 40px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    outline: none;
+    margin: 0px auto;
+}
+#search>input:first-of-type:focus{
+    border: 1px solid #317ef3;
+}
+#search>input:last-of-type{
+    width: 100px;
+    height: 44px;
+    position: absolute;
+    background: #317ef3;
+    border: 1px solid #317ef3;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+}
+/*职位推荐*/
+#position{
+    font-size: 24px;
+    text-align: center;
+    position: relative;
+    margin-bottom: 24px;
+}
+/*招聘信息*/
+#info_top{
+    width: 80%;
+    height: 700px;
+    border: black 2px solid;
+    margin: 10px auto;
+}
+.info_first{
+    width: 300px;
+    height: 300px;
+    border: blueviolet 2px solid;
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.info_second{
+    width: 300px;
+    height: 300px;
+    border: blueviolet 2px solid;
+    float: left;
+    margin-left: 142.5px;
+    margin-top: 10px;
+}
+.info_third{
+    width: 300px;
+    height: 300px;
+    border: blueviolet 2px solid;
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+.info_fourth{
+    width: 300px;
+    height: 300px;
+    border: blueviolet 2px solid;
+    float: left;
+    margin-left: 10px;
+    margin-top: 65px;
+}
+.info_fifth{
+    width: 300px;
+    height: 300px;
+    border: blueviolet 2px solid;
+    float: left;
+    margin-left: 142.5px;
+    margin-top: 65px;
+}
+.info_six{
+    width: 300px;
+    height: 300px;
+    border: blueviolet 2px solid;
+    float: right;
+    margin-top: 65px;
+    margin-right: 10px;
+}
+/*更多职业*/
+#more{
+    text-align: center;
+    margin-top: 4px;
+}
+#more>a{
+    display: inline-block;
+    min-width: 112px;
+    box-sizing: content-box;
+    height: 36px;
+    line-height: 36px;
+    border: 1px #5dd5c8 solid;
+    font-size: 16px;
+    color: #fff;
+    letter-spacing: 1px;
+    background: #5dd5c8;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+

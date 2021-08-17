@@ -1,0 +1,24 @@
+spring:
+  thymeleaf:
+    cache: false
+  datasource:
+    data-username: root
+    data-password: root
+    url: jdbc:mysql://localhost:3306/yidong?serverTimezone=GMT
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  mail:
+    username: 2381634205@qq.com
+    password: ownstdrkkdxeeadg
+    host: smtp.qq.com
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true
+  mvc:
+    format:
+      date: yyyy-MM-dd
+
+file:
+  staticAccessPath: /api/file/**
+  uploadFolder: C:/recruitPhoto/

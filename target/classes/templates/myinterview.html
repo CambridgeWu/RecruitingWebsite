@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>我的面试</title>
+    <link rel="stylesheet" th:href="@{/applyer/mine.css}">
+</head>
+<script type="text/javascript">
+    function noQueue(telephone,position) {
+        var result=window.confirm("是否确认取消?");
+        if(result){
+            window.location.href="/applyer/noQueue?telephone="+telephone+"&position="+position;
+        }
+    }
+
+    function toQueue(telephone,position) {
+        var result=window.confirm("是否重新排队?");
+        if(result){
+            window.location.href="/applyer/toQueue?telephone="+telephone+"&position="+position;
+        }
+    }
+</script>
+<body>
+<div class="container">
+    <table class="myInterview">
+        <thead>
+        <th>职位</th>
+        <th>面试官手机号</th>
+        <th>前面还有</th>
+        <th>操作</th>
+        </thead>
+        <tbody>
+        <tr th:each="apply:${applyList}">
+            <td th:text="${apply.position}"></td>
+            <td th:text="${apply.iphone}"></td>
+            <td th:text="${apply.queue}==0?'':${apply.personNum}-1"></td>
+            <td>
+                <button class="" th:onclick="noQueue([[${apply.telephone}]],[[${apply.position}]]);" th:if="${apply.queue!=0}">取消排队</button>
+                <button class="" th:onclick="toQueue([[${apply.telephone}]],[[${apply.position}]]);" th:if="${apply.queue!=1}">重新排队</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <input type="button" class="return" value="返回" onclick="window.location.href='/applyer/yidong'">
+</div>
+</body>
+</html>
